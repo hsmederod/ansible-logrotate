@@ -124,11 +124,11 @@ SCRIPT_TEMPLATE = """
 
 
 def _compare_config(config, config_path):
-    current_run_md5 = hashlib.md5(config).hexdigest()
+    current_run_md5 = hashlib.md5(config.encode()).hexdigest()
     on_disk_md5 = None
     with open(config_path) as f:
         data = f.read()
-        on_disk_md5 = hashlib.md5(data).hexdigest()
+        on_disk_md5 = hashlib.md5(data.encode()).hexdigest()
 
     return on_disk_md5 == current_run_md5
 
