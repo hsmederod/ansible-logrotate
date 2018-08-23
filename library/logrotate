@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2014-2016 John Dewey
@@ -152,7 +152,7 @@ def _get_config(module):
     options = module.params.get('options')
     scripts = module.params.get('scripts', {})
     scripts = [SCRIPT_TEMPLATE.format(name=k, script=v)
-               for (k, v) in scripts.iteritems()]
+               for (k, v) in scripts.items()]
 
     template = TEMPLATE.format(path=path,
                                options='\n  '.join(options),
